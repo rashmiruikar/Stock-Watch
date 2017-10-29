@@ -1,4 +1,4 @@
-Git repository :https://github.com/rashmiruikar/RashmiRuikar_SE02
+Git repository :https://github.com/rashmiruikar/Stock-Watch.git
 
 Author: Rashmi Ruikar
 
