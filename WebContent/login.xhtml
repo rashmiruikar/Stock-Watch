@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<title>login</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+		integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+		crossorigin="anonymous"></link>
+	<style>
+body {
+	background-color: #eee;
+}
+
+*[role="form"] {
+	max-width: 530px;
+	padding: 15px;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+	margin-left: 5em;
+	margin-bottom: 1em;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover:not (.active ) {
+	background-color: #111;
+}
+
+.active {
+	background-color: #4CAF50;
+}
+</style>
+</h:head>
+<h:body>
+	<div class="container">	
+			<h:form class="form-horizontal" role="form">
+			<h:panelGroup rendered="#{not empty RegisterBean.name}">
+    <p>Welcome #{RegisterBean.name}, you have been registered. Login here !</p>
+</h:panelGroup>
+				<H2>Login</H2>
+				<div class="form-group">
+					<h:outputLabel for="uname">Username
+</h:outputLabel>
+					<h:inputText class="form-control" value="#{LoginBean.uname}"
+						id="uname" required="true" requiredMessage="Username is required">
+					</h:inputText>
+
+				</div>
+				<div class="form-group">
+					<h:outputLabel for="password">Password
+</h:outputLabel>
+					<h:inputSecret class="form-control" value="#{LoginBean.password}"
+						id="password" required="true"
+						requiredMessage="Password is required">
+					</h:inputSecret>
+				</div>
+				<div class="form-group">
+					<h:commandButton class="btn btn-primary" id="submit" value="submit"
+						action="#{LoginBean.login()}"></h:commandButton>
+				</div>
+			
+			</h:form>
+		</div>
+
+</h:body>
+
+</html>
